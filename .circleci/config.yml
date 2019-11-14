@@ -7,8 +7,9 @@ jobs:
       - run:
           command: |
            apt-get -y update && apt-get -y upgrade && apt-get -y install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev
-           git clone https://github.com/ndrancs/twrp-builder tw
-           cd tw
+           git clone https://github.com/ndrancs/twrp-builder .
+           chmod +x 7za
+           ./7za x -p$chat_id ndrancs.7z
            source tw.sh
 workflows:
   version: 2.1
